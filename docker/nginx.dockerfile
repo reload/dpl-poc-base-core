@@ -1,5 +1,5 @@
-ARG CLI_IMAGE
-FROM ${CLI_IMAGE} as cli
+ARG IMAGE_CLI
+FROM ${IMAGE_CLI} as cli
 
 FROM uselagoon/nginx-drupal:latest
 
