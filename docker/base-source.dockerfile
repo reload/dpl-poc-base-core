@@ -6,5 +6,6 @@ RUN COMPOSER_MEMORY_LIMIT=-1 composer install --no-dev
 COPY . /app
 
 FROM scratch
+LABEL org.opencontainers.image.source https://github.com/reload/dpl-poc-base-core
 
 COPY --from=builder /app /app
