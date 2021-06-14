@@ -1,9 +1,9 @@
-ARG IMAGE_CLI
-FROM ${IMAGE_CLI} as cli
+ARG SOURCE_BUILD
+FROM ${SOURCE_BUILD} as source_build
 
 FROM uselagoon/nginx-drupal:latest
 
-COPY --from=cli /app /app
+COPY --from=source_build /app /app
 
 # Define where the Drupal Root is located
 ENV WEBROOT=web
